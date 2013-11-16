@@ -127,13 +127,7 @@ webx_run (gint32 image_ID, gint32 drawable_ID)
 
   global_image_ID = image_ID;
   global_drawable_ID = drawable_ID;
- 
-  if (gimp_image_width (image_ID) > WEBX_MAX_SIZE
-      || gimp_image_height (image_ID) > WEBX_MAX_SIZE)
-    {
-      gimp_message (_("The image is too large for the Export for Web plug-in!"));
-      return;
-    }
+
 
   dlg = webx_dialog_new (image_ID, drawable_ID);
   webx_dialog_run (WEBX_DIALOG (dlg));
